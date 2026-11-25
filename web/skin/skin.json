@@ -1,0 +1,1070 @@
+{
+ "bk_combobox": {
+  "caption": {
+   "0": "#ffffff",
+   "1": "#e9d6bc",
+   "2": "#e9d6bc"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 20,
+  "outline": 0,
+  "slice": null,
+  "type": "ComboBox",
+  "w": 110
+ },
+ "bkbtn_w122": {
+  "caption": {
+   "0": "#cdcdcd",
+   "1": "#ffffff",
+   "2": "#808080"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 25,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 122
+ },
+ "black_bottomround_white2border": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 26,
+  "outline": 0,
+  "slice": [
+   2,
+   20,
+   20,
+   20
+  ],
+  "type": "ResizeWindow",
+  "w": 44
+ },
+ "black_editbox": {
+  "caption": {
+   "0": "#ffffff"
+  },
+  "frames": [
+   0
+  ],
+  "h": 10,
+  "outline": 0,
+  "slice": null,
+  "type": "EditBox",
+  "w": 10
+ },
+ "blue2ton_bar": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 10,
+  "outline": 0,
+  "slice": null,
+  "type": "ProgressBar",
+  "w": 100
+ },
+ "box_black": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 5,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 5
+ },
+ "box_brown": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 5,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 5
+ },
+ "box_check": {
+  "caption": {
+   "0": "#e9d6bc",
+   "1": "#e9d6bc",
+   "2": "#e9d6bc",
+   "3": "#e9d6bc"
+  },
+  "frames": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "h": 19,
+  "outline": 0,
+  "slice": null,
+  "type": "CheckButton",
+  "w": 18
+ },
+ "box_white1stroke": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 3,
+  "outline": 0,
+  "slice": null,
+  "type": "ResizeWindow",
+  "w": 3
+ },
+ "box_white1stroke_ot15": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 3,
+  "outline": 0,
+  "slice": null,
+  "type": "ResizeWindow",
+  "w": 3
+ },
+ "box_white3stroke": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 9,
+  "outline": 0,
+  "slice": null,
+  "type": "ResizeWindow",
+  "w": 9
+ },
+ "box_white3stroke_blackfill": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 6,
+  "outline": 0,
+  "slice": [
+   2,
+   2,
+   2,
+   2
+  ],
+  "type": "ResizeWindow",
+  "w": 6
+ },
+ "box_yellowround": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 15,
+  "outline": 0,
+  "slice": [
+   5,
+   5,
+   5,
+   5
+  ],
+  "type": "ResizeWindow",
+  "w": 15
+ },
+ "boxicon_gold": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 9,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 9
+ },
+ "btnbase": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 16,
+  "outline": 0,
+  "slice": null,
+  "type": "ResizeWindow",
+  "w": 16
+ },
+ "closebtn_18": {
+  "caption": {
+   "0": "#e9d6bc",
+   "1": "#e9d6bc",
+   "2": "#e9d6bc"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 18,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 18
+ },
+ "gear_50_innercircle": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 50,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 50
+ },
+ "graybtn_w140": {
+  "caption": {
+   "0": "#ffffff",
+   "1": "#848484",
+   "2": "#000000"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 23,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 140
+ },
+ "green_bar": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 5,
+  "outline": 0,
+  "slice": null,
+  "type": "ProgressBar",
+  "w": 30
+ },
+ "greenbtn_w140": {
+  "caption": {
+   "0": "#033e00",
+   "1": "#068200",
+   "2": "#000000"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 23,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 140
+ },
+ "hp_redbar": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 11,
+  "outline": 0,
+  "slice": null,
+  "type": "ProgressBar",
+  "w": 20
+ },
+ "inven_board": {
+  "caption": {},
+  "frames": [
+   0
+  ],
+  "h": 200,
+  "outline": 0,
+  "slice": null,
+  "slots": {
+   "0": [
+    94,
+    19
+   ],
+   "1": [
+    94,
+    56
+   ],
+   "2": [
+    94,
+    93
+   ],
+   "3": [
+    131,
+    56
+   ],
+   "4": [
+    57,
+    56
+   ],
+   "5": [
+    20,
+    19
+   ],
+   "6": [
+    20,
+    56
+   ],
+   "7": [
+    168,
+    19
+   ],
+   "8": [
+    94,
+    152
+   ],
+   "9": [
+    57,
+    152
+   ],
+   "10": [
+    131,
+    152
+   ]
+  },
+  "type": "board",
+  "w": 219
+ },
+ "mac_btn": {
+  "caption": {
+   "0": "#562e0a",
+   "1": "#b56115",
+   "2": "#fbe8d7"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 25,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 212
+ },
+ "pinkbtn_w140": {
+  "caption": {
+   "0": "#5f5067",
+   "1": "#b959ff",
+   "2": "#000000"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 23,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 140
+ },
+ "popup_win": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 68,
+  "outline": 0,
+  "slice": [
+   38,
+   26,
+   26,
+   26
+  ],
+  "type": "ResizeWindow",
+  "w": 56
+ },
+ "rdbtn_iconcancel": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 16,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 16
+ },
+ "rdbtn_w100": {
+  "caption": {
+   "0": "#e9d6bc",
+   "1": "#ffffff",
+   "2": "#cdcdcd"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 23,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 100
+ },
+ "redbtn_w140": {
+  "caption": {
+   "0": "#000000",
+   "1": "#353535",
+   "2": "#ffffff"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 23,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 140
+ },
+ "sidebar_scr": {
+  "caption": {
+   "0": "#e9d6bc",
+   "1": "#e9d6bc",
+   "2": "#e9d6bc"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 11,
+  "outline": 0,
+  "slice": null,
+  "type": "ScrollBar",
+  "w": 76
+ },
+ "slot_aniselect": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 32,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 32
+ },
+ "slot_base": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 32,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 32
+ },
+ "smbluebtn_w67": {
+  "caption": {
+   "0": "#324a70",
+   "1": "#416092",
+   "2": "#1f2e45"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 20,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 67
+ },
+ "smgybtn_w143": {
+  "caption": {
+   "0": "#3c3c3c",
+   "1": "#646464",
+   "2": "#191919"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 20,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 143
+ },
+ "smredbtn_w67": {
+  "caption": {
+   "0": "#000000",
+   "1": "#575757",
+   "2": "#000000"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 20,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 67
+ },
+ "smwtbtn_w67": {
+  "caption": {
+   "0": "#555555",
+   "1": "#808080",
+   "2": "#323232"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 20,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 67
+ },
+ "smylbtn_w143": {
+  "caption": {
+   "0": "#555555",
+   "1": "#808080",
+   "2": "#323232"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 20,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 143
+ },
+ "tabbar_w108_2btn": {
+  "caption": {
+   "0": "#808080",
+   "1": "#aaaaaa",
+   "2": "#ffffff",
+   "3": "#ffffff"
+  },
+  "frames": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "h": 22,
+  "outline": 0,
+  "slice": null,
+  "type": "RadioButton",
+  "w": 108
+ },
+ "trash_btn": {
+  "caption": {
+   "0": "#e9d6bc",
+   "1": "#e9d6bc",
+   "2": "#808080"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 22,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 22
+ },
+ "white_bar": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 5,
+  "outline": 0,
+  "slice": null,
+  "type": "ProgressBar",
+  "w": 30
+ },
+ "win_mg": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 44,
+  "outline": 0,
+  "slice": [
+   20,
+   20,
+   20,
+   20
+  ],
+  "type": "ResizeWindow",
+  "w": 44
+ },
+ "win_tab": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 20,
+  "outline": 0,
+  "slice": [
+   5,
+   11,
+   11,
+   11
+  ],
+  "type": "ResizeWindow",
+  "w": 26
+ },
+ "winicon_booststore": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 36,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_comm": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_hairshop": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_inven": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_itemexchange": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_itemstrength": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_misstore": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_myinfo": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_packageshop": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 36,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_premchange": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 36,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_premiumstore": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_quest": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_skill": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_sowel": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_systme": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_title": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_trade": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_warehouse": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winicon_weaponstore": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 35,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 35
+ },
+ "winmd_cbar": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 37,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 4
+ },
+ "winmd_lbar": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 37,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 48
+ },
+ "winmd_rbar": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 37,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 86
+ },
+ "wintitle_bg": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 36,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 153
+ },
+ "wkbtn_iconcheck": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 16,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 16
+ },
+ "wkbtn_iconcir": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 16,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 15
+ },
+ "wkbtn_iconminus": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 16,
+  "outline": 0,
+  "slice": null,
+  "type": "StaticWindow",
+  "w": 16
+ },
+ "wkbtn_w100": {
+  "caption": {
+   "0": "#323232",
+   "1": "#808080",
+   "2": "#000000"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 23,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 100
+ },
+ "wkbtn_w140": {
+  "caption": {
+   "0": "#323232",
+   "1": "#808080",
+   "2": "#000000"
+  },
+  "frames": [
+   0,
+   1,
+   2
+  ],
+  "h": 23,
+  "outline": 0,
+  "slice": null,
+  "type": "PushButton",
+  "w": 140
+ },
+ "yello_bar": {
+  "caption": {
+   "0": "#e9d6bc"
+  },
+  "frames": [
+   0
+  ],
+  "h": 5,
+  "outline": 0,
+  "slice": null,
+  "type": "ProgressBar",
+  "w": 30
+ }
+}

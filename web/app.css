@@ -1,0 +1,328 @@
+/* Copyright (c) 2026 @sitxovski (Discord) */
+/* Админ-центр Astory — стили панели В ВИДЕ ОКОН ИГРЫ (владелец 16.11.2026: «дизайн как в игре — текстуры, окна,
+   шрифты, всё»). Все картинки — элементы окон JUI клиента, вырезанные tools/build_skin.py в /skin/ (имя файла = имя скина
+   JuiSkin.ini, «.1»/«.2» — кадры наведения/нажатия). Шрифт — Arial (атлас игрового шрифта собран из Arial, реестр
+   PORT_PENDING «ШРИФТ JUI»), подписи окон — с чёрной обводкой 1 px, как TextOutLine скинов. Цвета подписей кнопок —
+   CaptionColor кадров из JuiSkin (skin.json). Тема одна: окна игры тёмные. */
+:root {
+  --bg: #0b0d0a;
+  --ink: #f2e9da;            /* текст на чёрном окне */
+  --cap: #e9d6bc;            /* CaptionColor по умолчанию у скинов JUI */
+  --muted: #a39a8b;
+  --line: #2c2c2c;
+  --link: #6fc0ff;           /* голубые названия товаров в окнах магазинов */
+  --gold: #ffcc33;
+  --ok: #7ddc6a; --warn: #ffcc33; --bad: #ff5a3c;
+  --font: Arial, "Liberation Sans", "Helvetica Neue", sans-serif;
+  --mono: Consolas, "Cascadia Mono", ui-monospace, monospace;
+  --outline: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: radial-gradient(ellipse at 50% 0%, #1d2a1c 0%, #0b0d0a 70%) fixed, var(--bg);
+  color: var(--ink); font: 12px/1.45 var(--font);
+  /* картинки скина — без сглаживания: при масштабе экрана Windows 125–150 % браузер иначе размывает их
+     (владелец 16.11: «все картинки размыты»); свойство наследуется всеми элементами окна */
+  image-rendering: pixelated;
+}
+a { color: var(--link); text-decoration: none; cursor: pointer; }
+a:hover { text-decoration: underline; }
+.boot { padding: 40px; color: var(--muted); }
+.muted { color: var(--muted); }
+.small { font-size: 11px; }
+.mono { font-family: var(--mono); font-size: 11.5px; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.grow { flex: 1; }
+.err { color: var(--bad); margin: 6px 0; white-space: pre-wrap; text-shadow: var(--outline); }
+.note { border-left: 3px solid var(--gold); background: rgba(255, 204, 51, .08); padding: 6px 10px; margin: 8px 0; color: var(--cap); }
+/* ★ А5.6: журналы стойки (web/logs.js) */
+.lgbox { max-height: 62vh; overflow: auto; background: rgba(0, 0, 0, .35); padding: 4px 6px; margin: 6px 0; font-size: 12px; }
+.lgline { white-space: pre-wrap; word-break: break-all; border-bottom: 1px solid rgba(255, 255, 255, .04); }
+.lgline.lv-err { color: #ff7a6b; } .lgline.lv-warn { color: #f5c542; } .lgline.lv-debug { opacity: .6; }
+.lglinks { margin-left: 8px; } .lglinks button { padding: 0 6px; margin-left: 4px; }
+h2 { font-size: 13px; margin: 14px 0 8px; color: #fff; text-shadow: var(--outline); }
+details summary { cursor: pointer; color: var(--muted); }
+
+/* ---------- окно игры: Win_Mg (девятка 20 px) + полоса заголовка WinMd_LBar/CBar/RBar + значок + шестерёнка ---------- */
+.win {
+  position: relative; margin: 18px 16px 22px 4px; min-width: 0;
+  border: 4px solid transparent;
+  border-image: url(/skin/win_mg.png) 20 fill / 20px / 0 stretch;
+  padding: 40px 10px 12px;
+}
+.win > .wt {                                     /* полоса заголовка (окно «Рюкзак»: WinMd_* в (2,2), высота 37) */
+  /* на 3 px внутрь от наружного края и со скруглением по рамке Win_Mg: иначе угол полосы ложился поверх
+     скругления белой рамки и угол окна выглядел прямым (владелец 16.11) */
+  position: absolute; left: -1px; right: -1px; top: -1px; height: 36px; border-radius: 11px 11px 0 0;
+  background: url(/skin/winmd_lbar.png) left top no-repeat, url(/skin/winmd_rbar.png) right top no-repeat,
+              url(/skin/winmd_cbar.png) left top / 100% 37px repeat-x;
+}
+.win > .wt::after {                              /* WinTitle_Bg — мазок за надписью */
+  content: ""; position: absolute; left: 26px; top: 0; width: 153px; height: 36px;
+  background: url(/skin/wintitle_bg.png) no-repeat; pointer-events: none;
+}
+.win > .gear {                                   /* Gear_50_InnerCircle (-40,-10) от ПРАВОГО края 50×50 — шестерёнка справа
+                                                    вверху, за крестиком; крестик — в её центре (сверено со снимком окна игры) */
+  position: absolute; right: -15px; top: -17px; width: 50px; height: 50px; background: url(/skin/gear_50_innercircle.png) no-repeat;
+  z-index: -1; pointer-events: none;            /* ПОД окном: из-за рамки видны только зубцы, как в игре */
+}
+.wt .wi {                                        /* WinIcon_* 35×35 — круг значка в левом верхнем углу окна */
+  position: absolute; left: -2px; top: -2px; width: 35px; height: 35px; background-repeat: no-repeat; z-index: 2;
+}
+/* строка заголовка: название, сразу за ним значки и кнопки (17.11 — раньше инструменты прижимались к правому краю) */
+.wt .whead { position: absolute; left: 40px; right: 44px; top: 7px; z-index: 2; display: flex; align-items: center; gap: 12px; min-width: 0; }
+.wt .wtitle {
+  flex: 0 1 auto; min-width: 0; padding-top: 1px;
+  font: bold 15px/18px var(--font); color: #fff; text-shadow: var(--outline);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.wt .wtools { flex: none; display: flex; gap: 6px; align-items: center; }
+.wt .wtools .muted { text-shadow: var(--outline); color: var(--cap); }
+.win > .wclose {                                 /* CloseBtn_18 — в центре шестерёнки; кадры 0/1/2 */
+  position: absolute; right: 1px; top: -1px; width: 18px; height: 18px; z-index: 3; cursor: pointer;
+  background: url(/skin/closebtn_18.png) no-repeat; border: 0; padding: 0;
+}
+.win > .wclose:hover { background-image: url(/skin/closebtn_18.1.png); }
+.win > .wclose:active { background-image: url(/skin/closebtn_18.2.png); }
+
+/* значки разделов (WinIcon_*) */
+.wi.inven { background-image: url(/skin/winicon_inven.png); }
+.wi.systme { background-image: url(/skin/winicon_systme.png); }
+.wi.myinfo { background-image: url(/skin/winicon_myinfo.png); }
+.wi.quest { background-image: url(/skin/winicon_quest.png); }
+.wi.skill { background-image: url(/skin/winicon_skill.png); }
+.wi.comm { background-image: url(/skin/winicon_comm.png); }
+.wi.warehouse { background-image: url(/skin/winicon_warehouse.png); }
+.wi.trade { background-image: url(/skin/winicon_trade.png); }
+.wi.title { background-image: url(/skin/winicon_title.png); }
+.wi.premiumstore { background-image: url(/skin/winicon_premiumstore.png); }
+.wi.itemexchange { background-image: url(/skin/winicon_itemexchange.png); }
+.wi.sowel { background-image: url(/skin/winicon_sowel.png); }
+
+/* ---------- раскладка: меню-окно слева + рабочее окно ---------- */
+.layout { display: grid; grid-template-columns: 262px 1fr; gap: 6px; padding: 8px 16px 40px 8px; align-items: start; }
+.side { position: sticky; top: 8px; }
+.side .wb { display: flex; flex-direction: column; gap: 8px; padding-top: 4px; }
+.side .navbtn {                                  /* BkBtn_W122: чёрная игровая кнопка; выбранный пункт — RdBtn_W100 */
+  /* 35 px (было 25) = высота иконки WinIcon (35 px, заполнена до края): иконка не выступает — владелец 17.11 «кнопки чуть выше» */
+  display: flex; align-items: center; gap: 6px; height: 35px; padding: 0 8px 0 0; text-decoration: none;
+  /* 9 частей: блик и тень по 2 px сверху/снизу не растягиваются, тянется только градиент середины (ширина рисуемых краёв
+     2 px при нулевой рамке по вертикали — высота 35 px вся под содержимое, иконка не обрезается) */
+  /* слева рамки в раскладке нет (17.11 «иконки к левому краю»): левый край картинки рисуется поверх содержимого, иконка
+     стоит вплотную к краю кнопки и не обрезается overflow: hidden (он режет по внутренней границе рамки) */
+  border: 0 solid transparent; border-width: 0 10px 0 0; border-image: url(/skin/bkbtn_w122.png) 2 10 fill / 2px 10px;
+  color: #cdcdcd; text-shadow: var(--outline); font-weight: bold; white-space: nowrap; overflow: hidden;
+}
+.side .navbtn:hover { border-image-source: url(/skin/bkbtn_w122.1.png); color: #fff; }
+.side .navbtn:active { border-image-source: url(/skin/bkbtn_w122.2.png); color: #808080; }
+.side .navbtn.on { border-image-source: url(/skin/rdbtn_w100.png); color: var(--cap); }
+.side .navbtn .wi { position: static; width: 35px; height: 35px; margin: 0; flex: none; }   /* родные 35 px без масштаба (не размывать) — ровно по высоте кнопки */
+.side .who { color: var(--muted); padding: 10px 4px 0; border-top: 1px solid var(--line); margin-top: 6px; }
+.main { min-width: 0; }
+.side .navbtn.locked { color: #6d6d6d; }
+.side .navbtn .lock { margin-left: auto; font-size: 11px; filter: grayscale(1); }
+.note.big { font-size: 13px; padding: 10px 12px; color: #fff; text-shadow: var(--outline); }
+.totp { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+.totp .qr { border: 2px solid #fff; }
+.totp .key { font-size: 15px; letter-spacing: 1px; color: var(--gold); margin: 4px 0; user-select: all; }
+
+/* ---------- карточка: вкладка-заголовок (TabBar_W108, выбранный кадр) над панелью Win_Tab (белая рамка, чёрное поле) ---------- */
+.card {
+  position: relative; min-width: 0; margin: 0 0 12px;
+  border: 0 solid transparent; border-width: 5px 11px 11px;
+  border-image: url(/skin/win_tab.png) 5 11 11 fill / 5px 11px 11px;
+  padding: 6px 0 2px;
+}
+.card.headed, .card:has(> h2:first-child) { margin-top: 32px; }   /* место под вкладку-заголовок: иначе она налезала на вкладки раздела (владелец 16.11) */
+.card > h2:first-child {
+  position: absolute; left: -6px; top: -27px; margin: 0; height: 22px; line-height: 22px; padding: 0 16px; max-width: 90%;
+  border: 0 solid transparent; border-width: 0 12px; border-image: url(/skin/tabbar_w108_2btn.2.png) 0 12 fill / 0 12px;
+  color: #fff; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 0 14px; }
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: 3px 16px; }
+.kv > div:nth-child(odd) { color: var(--muted); }
+
+/* ---------- вкладки: TabBar_W108 (кадр 0 обычный, 1 наведение, 2 выбран — чёрная с белой рамкой, сливается с Win_Tab) ---------- */
+.tabs { display: flex; gap: 2px; margin: 10px 0 0; flex-wrap: wrap; align-items: flex-end; }
+.tabs a {
+  height: 22px; line-height: 22px; padding: 0 12px; text-decoration: none; min-width: 84px; text-align: center;
+  border: 0 solid transparent; border-width: 0 12px; border-image: url(/skin/tabbar_w108_2btn.png) 0 12 fill / 0 12px;
+  color: #808080; font-weight: bold;
+}
+.tabs a:hover { border-image-source: url(/skin/tabbar_w108_2btn.1.png); color: #aaa; }
+.tabs a.on { border-image-source: url(/skin/tabbar_w108_2btn.2.png); color: #fff; }
+.tabs + div { border: 0 solid transparent; border-width: 5px 11px 11px; border-image: url(/skin/win_tab.png) 5 11 11 fill / 5px 11px 11px;
+  padding: 8px 0 4px; min-width: 0; }
+
+/* ---------- кнопки: WkBtn_W140 (светлая), GreenBtn/RedBtn_W140, SmWtBtn_W67 (малая); подписи — CaptionColor кадров ---------- */
+button {
+  font: bold 12px var(--font); height: 23px; padding: 0 12px; cursor: pointer; white-space: nowrap;
+  border: 0 solid transparent; border-width: 0 8px; border-image: url(/skin/wkbtn_w140.png) 0 8 fill / 0 8px;
+  color: #323232; background: none;
+}
+button:hover { border-image-source: url(/skin/wkbtn_w140.1.png); color: #808080; }
+button:active { border-image-source: url(/skin/wkbtn_w140.2.png); color: #000; }
+button[type=submit], button.ok { border-image-source: url(/skin/greenbtn_w140.png); color: #033e00; }
+button[type=submit]:hover, button.ok:hover { border-image-source: url(/skin/greenbtn_w140.1.png); }
+button[type=submit]:active, button.ok:active { border-image-source: url(/skin/greenbtn_w140.2.png); }
+button.danger { border-image-source: url(/skin/redbtn_w140.png); color: #000; }
+button.danger:hover { border-image-source: url(/skin/redbtn_w140.1.png); }
+button.danger:active { border-image-source: url(/skin/redbtn_w140.2.png); }
+button.ghost { height: 20px; font-size: 11px; padding: 0 8px; border-width: 0 6px; border-image: url(/skin/smwtbtn_w67.png) 0 6 fill / 0 6px; color: #555; }
+button.ghost:hover { border-image-source: url(/skin/smwtbtn_w67.1.png); }
+button.ghost:active { border-image-source: url(/skin/smwtbtn_w67.2.png); }
+button.gold { height: 25px; border-width: 0 12px; border-image: url(/skin/mac_btn.png) 0 12 fill / 0 12px; color: #562e0a; }
+button.gold:hover { border-image-source: url(/skin/mac_btn.1.png); }
+button.gold:active { border-image-source: url(/skin/mac_btn.2.png); }
+button:disabled { filter: grayscale(1) brightness(.7); cursor: default; }
+button:focus-visible, a:focus-visible, input:focus, select:focus { outline: 1px solid var(--gold); outline-offset: 1px; }
+
+/* ---------- поля: Black_EditBox (полупрозрачная плитка), BK_ComboBox (поле + оранжевая стрелка) ---------- */
+input {
+  font: 12px var(--font); color: #fff; height: 22px; padding: 0 6px; min-width: 0;
+  background: url(/skin/black_editbox.png) repeat, #000; border: 1px solid #5b5b5b;
+}
+input::placeholder { color: #7d7468; }
+select {
+  font: 12px var(--font); color: #fff; height: 20px; padding: 0 4px; min-width: 90px; cursor: pointer; appearance: none;
+  border: 0 solid transparent; border-width: 0 22px 0 4px; border-image: url(/skin/bk_combobox.png) 0 22 0 4 fill / 0 22px 0 4px;
+  background: none;
+}
+select:hover { border-image-source: url(/skin/bk_combobox.1.png); }
+select option { background: #111; color: #fff; }
+.login label, .form label { display: block; margin: 8px 0 3px; color: var(--cap); text-shadow: var(--outline); }
+.form input, .form select { width: 100%; max-width: 340px; }
+
+/* ---------- таблицы (списки окон: тёмные строки, заголовок — полоса) ---------- */
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--cap); font-weight: bold; white-space: nowrap; background: linear-gradient(#3a3a3a, #262626); text-shadow: var(--outline); }
+tr.click { cursor: pointer; }
+tr.click:hover td { background: rgba(255, 204, 51, .12); }
+.scroll { overflow-x: auto; }
+
+/* ---------- метки: малые игровые кнопки как плашки ---------- */
+.badge {
+  display: inline-block; height: 20px; line-height: 20px; padding: 0 6px; font-size: 11px; font-weight: bold; white-space: nowrap;
+  border: 0 solid transparent; border-width: 0 6px; border-image: url(/skin/smgybtn_w143.png) 0 6 fill / 0 6px; color: #3c3c3c;
+}
+.badge.ok { border-image-source: url(/skin/greenbtn_w140.png); color: #033e00; image-rendering: auto; }   /* 23→20 по высоте — сглаживать */
+.badge.bad { border-image-source: url(/skin/smredbtn_w67.png); color: #000; }
+.badge.warn { border-image-source: url(/skin/smylbtn_w143.png); color: #555; }
+
+/* ---------- сумка: Slot_Base 32×32 (ячейка инвентаря), выбор — Slot_AniSelect ---------- */
+.bag { display: grid; grid-template-columns: repeat(auto-fill, 33px); gap: 1px; max-width: 560px; }
+.slot { width: 32px; height: 32px; background: url(/skin/slot_base.png) no-repeat; position: relative; cursor: pointer; }
+.slot.sel::after { content: ""; position: absolute; inset: 0; background: url(/skin/slot_aniselect.png) no-repeat; pointer-events: none; }
+.slot .qty { position: absolute; right: 1px; bottom: -1px; font-size: 10px; font-weight: bold; color: #fff; text-shadow: var(--outline); }
+.slot .up { position: absolute; left: 1px; top: -1px; font-size: 10px; font-weight: bold; color: var(--gold); text-shadow: var(--outline); }
+.icon { width: 32px; height: 32px; background-repeat: no-repeat; }
+.icon.sm { width: 22px; height: 22px; display: inline-block; vertical-align: middle; image-rendering: auto; }   /* уменьшение — сглаживать */
+.noicon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--muted); }
+.itemline { display: flex; align-items: center; gap: 6px; }
+
+/* ---------- вход: всплывающее окно по центру ---------- */
+.login { max-width: 380px; margin: 14vh auto 0; padding: 0 30px 0 16px; }
+.login .win { margin-left: 0; }
+.login input { width: 100%; }
+.login .row { margin-top: 12px; justify-content: flex-end; }
+
+/* полосы прокрутки — в тон окну */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #5c5c5c; border: 2px solid #000; border-radius: 5px; }
+
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; padding: 4px 8px 30px 4px; }
+  .side { position: static; }
+  .side .wb { flex-direction: row; flex-wrap: wrap; }
+  .side .who { width: 100%; }
+  .win { margin-left: 4px; }
+  /* ревизия В4: на узком экране «Обновить» и метки не прятать — строкой под полосой заголовка */
+  .main > .win { padding-top: 70px; }
+  .wt .whead { flex-wrap: wrap; row-gap: 14px; }
+  .wt .wtools { flex: 1 1 100%; flex-wrap: wrap; margin-left: -34px; }
+}
+
+/* ---------- разное: строки, листалка, переключатель языка, флажок ---------- */
+.row.end { justify-content: flex-end; margin-top: 8px; }
+.pager { display: flex; gap: 4px; align-items: center; }
+.pager .pg { min-width: 64px; text-align: center; color: #fff; text-shadow: var(--outline); font-weight: bold; }
+.lang { display: flex; gap: 2px; margin-top: 8px; }
+.lang button.on { border-image-source: url(/skin/smwtbtn_w67.2.png); color: #000; }
+.chkl { color: var(--cap); gap: 4px; white-space: nowrap; cursor: pointer; }
+input.chk { appearance: none; width: 18px; height: 19px; border: 0; padding: 0; cursor: pointer;
+  background: url(/skin/box_check.png) no-repeat; }                    /* Box_Check: кадр 0 / кадр 2 — отмечен */
+input.chk:checked { background-image: url(/skin/box_check.2.png); }
+
+/* ---------- всплывающее окно подтверждения и уведомления ---------- */
+.modal { position: fixed; inset: 0; background: rgba(0, 0, 0, .55); display: flex; align-items: center; justify-content: center; z-index: 50; padding: 16px; }
+.modal-in { width: min(520px, 100%); }
+.modal .win { margin: 0; }
+.modal .pv { font-size: 13px; color: #fff; margin: 4px 0 8px; }
+.toast { position: fixed; right: 16px; bottom: 16px; z-index: 60; max-width: min(460px, calc(100% - 32px)); padding: 8px 12px;
+  border: 0 solid transparent; border-width: 5px 11px 11px; border-image: url(/skin/win_tab.png) 5 11 11 fill / 5px 11px 11px;
+  color: #fff; text-shadow: var(--outline); }
+.toast.bad { color: #ffb4a6; }
+
+/* ---------- ОКНО ИНВЕНТАРЯ как в игре: доска экипировки (INVEN_WIN) + вкладки сумок + сетка Slot_Base ---------- */
+.inv { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+.inv-left { width: 352px; max-width: 100%; }
+.inv-board { position: relative; background: url(/skin/inven_board.png) no-repeat; margin: 6px 0 4px; }
+.inv-board .eslot { position: absolute; background: none; }            /* рамка и силуэт слота — уже на доске */
+.inv-board .eslot .icon { background-color: #000; }
+.inv-arrow { position: absolute; left: 184px; top: 104px; width: 31px; height: 31px; border: 0; padding: 0; background: none;
+  cursor: pointer; border-image: none; }                                /* жёлтая стрелка InvenExp: подробности */
+.inv-arrow:hover { outline: 1px solid #fff; }
+.inv-tabs { margin-top: 2px; }
+.inv-tabs a { min-width: 0; flex: 1; }
+.inv-panel { border: 0 solid transparent; border-width: 5px 11px 11px; border-image: url(/skin/win_tab.png) 5 11 11 fill / 5px 11px 11px;
+  padding: 6px 0 2px; }
+.inv-grid { display: grid; grid-template-columns: repeat(10, 32px); gap: 1px; justify-content: center; max-height: 340px; overflow-y: auto; overflow-x: hidden; }
+.inv-gold { display: flex; justify-content: flex-end; align-items: center; gap: 4px; margin-top: 6px; color: #fff; text-shadow: var(--outline); font-weight: bold; }
+.goldico { display: inline-block; width: 9px; height: 9px; background: url(/skin/boxicon_gold.png) no-repeat; }
+.slot.over { outline: 1px solid var(--gold); outline-offset: -1px; }
+.slot[draggable=true] { cursor: grab; }
+.inv-info { flex: 1; min-width: 280px; margin-top: 6px; }
+.inv-info.hidden { display: none; }
+
+/* ---------- правка золота (карандаш → поле + ✔ + ✖) и свойств предмета ---------- */
+.icobtn { width: 22px; min-width: 22px; height: 20px; padding: 0; border-width: 0 6px; font-size: 12px; line-height: 20px; text-align: center; }
+.icobtn.pencil { border-image: url(/skin/smwtbtn_w67.png) 0 6 fill / 0 6px; color: #333; }
+.icobtn.pencil::before { content: "✎"; }
+.icobtn.ok { height: 23px; border-image: url(/skin/greenbtn_w140.png) 0 6 fill / 0 6px; color: #033e00; }
+.icobtn.ok::before { content: "✔"; }
+.icobtn.cancel { width: 16px; min-width: 16px; height: 16px; border: 0; border-image: none; background: url(/skin/rdbtn_iconcancel.png) no-repeat; }
+.goldin { width: 120px; text-align: right; }
+.inv-gold .icobtn { margin-left: 4px; }
+.kv.edit { grid-template-columns: max-content 1fr; align-items: center; gap: 6px 12px; margin: 8px 0; }
+.kv.edit select { max-width: 340px; }
+input.num { width: 80px; }
+.slot.gold { display: flex; align-items: center; justify-content: center; cursor: default; }
+.goldico.big { width: 9px; height: 9px; transform: scale(2); }
+/* редактор свойств не шире своей панели (длинные названия опций и самоцветов) */
+.inv-info { flex: 1 1 320px; min-width: 0; overflow: hidden; }
+.kv.edit > div { min-width: 0; }
+.kv.edit .row { flex-wrap: wrap; }
+.kv.edit select { max-width: 100%; min-width: 0; text-overflow: ellipsis; }
+/* 18.11: окно «Выдать предмет» — поиск и список найденных */
+input.wide { width: 320px; max-width: 100%; }
+.picklist { max-height: 220px; overflow-y: auto; margin: 6px 0; }
+.picklist .pick { padding: 3px 6px; cursor: pointer; border-radius: 3px; }
+.picklist .pick:hover { background: rgba(255, 255, 255, .12); }
+/* ★ А7.10 (24.11): справка операции — блок «Что изменится / Перезапуск / Откат» (окно подтверждения, страница «Справка») */
+.opdoc { border-left: 3px solid var(--gold); background: rgba(255, 255, 255, .05); padding: 6px 10px; margin: 8px 0; }
+.opdoc-line { margin: 3px 0; }
+.opdoc-line .badge { margin-right: 4px; }
+.opdoc-item { border-bottom: 1px solid rgba(255, 255, 255, .12); padding: 8px 0; }
+.opdoc-item:last-child { border-bottom: 0; }
+
+/* 25.11.2026: поля с подсказкой при наведении (форма события) — пунктир под подписью */
+.kv.edit > div[title] { text-decoration: underline dotted; text-underline-offset: 3px; }
+.kv.edit .hasTip .chkl { text-decoration: underline dotted; text-underline-offset: 3px; }
+/* 25.11.2026: длинный список в окне (группы монстров «Кто в игре») — прокрутка, шапка таблицы на месте */
+.scrollbox { max-height: 300px; overflow-y: auto; margin: 4px 0; }
+.scrollbox thead th { position: sticky; top: 0; z-index: 1; }

@@ -1,0 +1,11 @@
+# Copyright (c) 2026 @sitxovski (Discord)
+# Astory Admin Center - Python packages (panel service, deploy tools, Discord / Telegram bot)
+pyodbc>=5.0          # SQL Server access (panel, deploy, bot)
+cryptography>=42     # HTTPS certificate, two-factor secrets, LogSeal
+qrcode>=7.4          # two-factor QR code in "My account"
+Pillow>=10.0         # tools/build_skin.py, tools/build_ref_data.py (panel skin and icons)
+scipy>=1.11          # anti-cheat statistics (AstoryServer/Tools/Anticheat, used by the panel)
+numpy>=1.26          # used together with scipy
+discord.py>=2.4      # DiscordBot (announcements, community commands)
+python-dotenv>=1.0   # DiscordBot (.env with the bot token)
+PyYAML>=6.0          # DiscordBot (server_plan.yaml)

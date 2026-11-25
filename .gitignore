@@ -1,0 +1,42 @@
+# Copyright (c) 2026 @sitxovski (Discord)
+# your local answers and secrets - never commit
+_setup/astory.settings.local.json
+**/secrets/
+*.env
+*.key
+*.pem
+*.pfx
+*.p12
+# general
+__pycache__/
+*.pyc
+*.log
+*.bak
+*.bak*
+*.tmp
+*.stackdump
+.vs/
+
+# runtime data
+data/changesets/
+data/cs_cache/
+data/srv_cache/
+data/odds_cache/
+deploy/asda_admin_center.crt
+logs/
+# Discord / Telegram bot state and personal data
+DiscordBot/.env
+DiscordBot/telegram.env
+DiscordBot/reports.env
+DiscordBot/state.json
+DiscordBot/*_ledger.json
+DiscordBot/community_staff.json
+DiscordBot/activity.json
+DiscordBot/audit.json
+DiscordBot/BANNED_PLAYERS.md
+DiscordBot/playtest_accounts*.txt
+# built files
+*.exe
+*.dll
+*.pyd
+*.zip

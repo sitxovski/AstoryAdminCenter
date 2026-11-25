@@ -1,0 +1,135 @@
+# Декларативный план сервера Astory Remake Project.
+# botctl.py apply-roles сверяет этот список с сервером: создаёт недостающие роли,
+# правит расхождения (цвет/hoist/mentionable/права) и выставляет порядок.
+# Ничего не удаляет: лишние роли только попадают в отчёт.
+#
+# Порядок в списке = порядок в иерархии (сверху вниз).
+# Сопоставление по имени без учёта эмодзи и регистра, поэтому
+# "head of development" на сервере совпадёт с "👑 Head of Development" здесь.
+
+roles:
+  # ---- Команда (hoist: отдельная плашка в списке участников) ----
+  - name: "🛠️ Head of Development"     # создатель проекта
+    color: "#F1C40F"
+    hoist: true
+    mentionable: false
+    permissions: [administrator]
+
+  - name: "⚙️ Administrator"           # помощники HoD: всё управление, кроме настроек сервера
+    color: "#E74C3C"
+    hoist: true
+    mentionable: false
+    permissions:
+      - manage_channels
+      - manage_roles
+      - manage_messages
+      - manage_threads
+      - kick_members
+      - ban_members
+      - moderate_members
+      - view_audit_log
+      - mention_everyone
+      - manage_nicknames
+
+  - name: "Community Administrator"    # директор по связям с общественностью
+    color: "#F39C12"
+    hoist: true
+    mentionable: false
+    permissions:
+      - manage_messages
+      - manage_threads
+      - moderate_members
+      - mention_everyone
+      - manage_events
+      - manage_nicknames
+      - view_audit_log
+
+  - name: "🛡️ Moderator"               # помощники администраторов
+    color: "#3498DB"
+    hoist: true
+    mentionable: false
+    permissions:
+      - moderate_members
+      - manage_messages
+      - manage_threads
+      - kick_members
+
+  # ---- Сообщество ----
+  - name: "🧪 Beta Tester"             # доступ к закрытым тест-каналам (выдаётся на волны тестов)
+    color: "#2ECC71"
+    hoist: true
+    mentionable: false
+    permissions: []
+
+  - name: "🌍 Translator"              # переводчик: письмо везде, просмотр всех каналов
+    color: "#1ABC9C"
+    hoist: false
+    mentionable: false
+    permissions:
+      - send_messages
+      - send_messages_in_threads
+      - create_public_threads
+      - embed_links
+      - attach_files
+      - add_reactions
+      - read_message_history
+
+  - name: "⭐ Early Supporter"          # знак почёта: пришёл до релиза
+    color: "#9B59B6"
+    hoist: false
+    mentionable: false
+    permissions: []
+
+  # ---- Пинг-роли (подписка через онбординг; упоминают только HoD/Administrator) ----
+  - name: "📢 News Ping"
+    color: null
+    hoist: false
+    mentionable: false
+    permissions: []
+
+  - name: "⚙️ Patch Ping"
+    color: null
+    hoist: false
+    mentionable: false
+    permissions: []
+
+  - name: "🧪 Playtest Ping"
+    color: null
+    hoist: false
+    mentionable: false
+    permissions: []
+
+  # ---- Языковые (выдаются через онбординг) ----
+  - name: "English"
+    color: null
+    hoist: false
+    mentionable: false
+    permissions: []
+
+  - name: "Русский"
+    color: null
+    hoist: false
+    mentionable: false
+    permissions: []
+
+  - name: "العربية"
+    color: null
+    hoist: false
+    mentionable: false
+    permissions: []
+
+  - name: "中文"
+    color: null
+    hoist: false
+    mentionable: false
+    permissions: []
+
+# Роли, которые план не трогает вообще (управляются Discord или вручную)
+ignore_roles:
+  - "Server Booster"      # авто-роль Discord за буст
+  - "Oracle"              # интеграционная роль нашего бота (managed)
+  - "User"                # существующая членская роль — судьбу решает владелец
+  - "@everyone"
+
+# Каналы заполним после первого audit (см. audit.json)
+channels: {}
