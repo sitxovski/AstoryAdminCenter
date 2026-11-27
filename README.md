@@ -4,6 +4,8 @@
 
 ### ❤️ Like the project? Support the hard work on [**Boosty**](https://boosty.to/sitxovski_yurii)
 
+### 💬 Join our community on [**Discord**](https://discord.gg/DBPFczQKb2)
+
 # Astory Admin Center
 
 **A web panel to run the Astory game server — players, anti-cheat, events, releases and community in one place**
@@ -57,5 +59,7 @@ and link to this repository when you copy, fork or reuse any part of it.**
 <div align="center">
 
 ### ❤️ Support the hard work on [**Boosty**](https://boosty.to/sitxovski_yurii)
+
+### 💬 Join our community on [**Discord**](https://discord.gg/DBPFczQKb2)
 
 </div>

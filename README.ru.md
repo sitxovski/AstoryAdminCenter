@@ -4,6 +4,8 @@
 
 ### ❤️ Нравится проект? Поддержите труд на [**Boosty**](https://boosty.to/sitxovski_yurii)
 
+### 💬 Присоединяйтесь к нашему сообществу в [**Discord**](https://discord.gg/DBPFczQKb2)
+
 # Astory Admin Center
 
 **Веб-панель для управления игровым сервером Astory — игроки, античит, события, выпуски и сообщество в одном месте**
@@ -57,5 +59,7 @@
 <div align="center">
 
 ### ❤️ Поддержите труд на [**Boosty**](https://boosty.to/sitxovski_yurii)
+
+### 💬 Присоединяйтесь к нашему сообществу в [**Discord**](https://discord.gg/DBPFczQKb2)
 
 </div>

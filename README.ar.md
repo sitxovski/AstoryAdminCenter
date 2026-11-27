@@ -4,6 +4,8 @@
 
 ### ❤️ هل أعجبك المشروع؟ ادعم هذا العمل الشاق على [**Boosty**](https://boosty.to/sitxovski_yurii)
 
+### 💬 انضم إلى مجتمعنا على [**Discord**](https://discord.gg/DBPFczQKb2)
+
 # Astory Admin Center
 
 **لوحة ويب لإدارة خادم لعبة Astory — اللاعبون، ومكافحة الغش، والفعاليات، والإصدارات، والمجتمع في مكان واحد**
@@ -61,5 +63,7 @@
 <div align="center">
 
 ### ❤️ ادعم هذا العمل الشاق على [**Boosty**](https://boosty.to/sitxovski_yurii)
+
+### 💬 انضم إلى مجتمعنا على [**Discord**](https://discord.gg/DBPFczQKb2)
 
 </div>
